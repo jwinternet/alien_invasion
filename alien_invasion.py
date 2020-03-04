@@ -17,7 +17,6 @@ __status__ = "DEV"
 import sys
 import pygame
 
-
 ###############################################################################
 
 class AlienInvasion:
