@@ -7,7 +7,7 @@ __author__ = "Jared Winter"
 __copyright__ = "Copyright 2020, jwinternet"
 __credits__ = ""
 __license__ = "GNU General Public License v3.0"
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 __updated__ = "3/4/2020"
 __email__ = "jaredwinter2015@outlook.com"
 __status__ = "DEV"
@@ -20,8 +20,8 @@ class Settings:
 	def __init__(self):
 		"""Initialize the game's settings."""
 		# Screen settings
-		self.screen_width = 1200
-		self.screen_height = 800
+		self.screen_width = 1100
+		self.screen_height = 750
 		self.bg_color = (230, 230, 230)
 
 		# Ship settings
@@ -39,4 +39,4 @@ class Settings:
 		self.bullets_allowed = 15
 
 		# Alien settings
-		self.alien_speed = 0.5
+		self.alien_speed = 1.5
