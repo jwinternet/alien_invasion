@@ -3,7 +3,7 @@
 
 __author__ = "Jared Winter"
 __started__ = "2/23/2021"
-__revision__ = "v0.0.1"
+__revision__ = "v0.0.4"
 
 import pygame
 
