@@ -3,7 +3,7 @@
 
 __author__ = "Jared Winter"
 __started__ = "2/23/2021"
-__revision__ = "v0.0.5"
+__revision__ = "v0.0.7"
 
 import sys
 
@@ -46,9 +46,13 @@ class AlienInvasion:
 			elif event.type == pygame.KEYDOWN:
 				if event.key == pygame.K_RIGHT:
 					self.ship.moving_right = True
+				elif event.key == pygame.K_LEFT:
+					self.ship.moving_left = True
 			elif event.type == pygame.KEYUP:
 				if event.key == pygame.K_RIGHT:
 					self.ship.moving_right = False
+				elif event.key == pygame.K_LEFT:
+					self.ship.moving_left = False
 
 	def _update_screen(self):
 		"""Update images on the screen, and flip to the new screen."""
