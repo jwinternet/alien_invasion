@@ -3,7 +3,7 @@
 
 __author__ = "Jared Winter"
 __started__ = "2/23/2021"
-__revision__ = "v0.0.4"
+__revision__ = "v0.0.5"
 
 import pygame
 
@@ -23,6 +23,13 @@ class Ship:
 		# Start each new ship at the bottom center of the screen.
 		self.rect.midbottom = self.screen_rect.midbottom
 
+		# Movement flag
+		self.moving_right = False
+
+	def update(self):
+		"""Update the ship's position based on the movement flag."""
+		if self.moving_right:
+			self.rect.x += 1
 
 	def blitme(self):
 		"""Draw the ship at its current location."""
