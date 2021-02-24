@@ -1,10 +1,6 @@
 #!/usr/bin/env python3
 """Alien Invasion - Alien Module"""
 
-__author__ = "Jared Winter"
-__started__ = "2/24/2021"
-__revision__ = "v1.0.0"
-
 import pygame
 from pygame.sprite import Sprite
 
