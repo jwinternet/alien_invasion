@@ -3,12 +3,13 @@
 
 __author__ = "Jared Winter"
 __started__ = "2/23/2021"
-__revision__ = "v0.1.0"
+__revision__ = "v0.2.0"
 
 import sys
 
 import pygame
 
+from alien import Alien
 from bullet import Bullet
 from settings import Settings
 from ship import Ship
@@ -29,6 +30,9 @@ class AlienInvasion:
 
 		self.ship = Ship(self)
 		self.bullets = pygame.sprite.Group()
+		self.aliens = pygame.sprite.Group()
+
+		self._create_fleet()
 
 		# Set the background color.
 		self.bg_color = (230, 230, 230)
@@ -85,12 +89,19 @@ class AlienInvasion:
 			if bullet.rect.bottom <= 0:
 				self.bullets.remove(bullet)
 
+	def _create_fleet(self):
+		"""Create the fleet of aliens."""
+		# Make an alien.
+		alien = Alien(self)
+		self.aliens.add(alien)
+
 	def _update_screen(self):
 		"""Update images on the screen, and flip to the new screen."""
 		self.screen.fill(self.settings.bg_color)
 		self.ship.blitme()
 		for bullet in self.bullets.sprites():
 			bullet.draw_bullet()
+		self.aliens.draw(self.screen)
 
 		pygame.display.flip()
 

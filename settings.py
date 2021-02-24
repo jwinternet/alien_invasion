@@ -3,7 +3,7 @@
 
 __author__ = "Jared Winter"
 __started__ = "2/23/2021"
-__revision__ = "v0.1.0"
+__revision__ = "v0.2.0"
 
 
 class Settings:
