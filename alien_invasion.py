@@ -1,15 +1,12 @@
 #!/usr/bin/env python3
 """Alien Invasion - Primary Module"""
 
-__author__ = "Jared Winter"
-__started__ = "2/23/2021"
-__revision__ = "v1.0.0"
-
 import sys
 import time
 
 import pygame
 
+import background
 import bullet
 import button
 import game_stats
@@ -44,6 +41,7 @@ class AlienInvasion:
 		self.sb = scoreboard.Scoreboard(self)
 
 		self.ship = ship.Ship(self)
+		self.background = background.Background(self)
 		self.bullets = pygame.sprite.Group()
 		self.aliens = pygame.sprite.Group()
 
@@ -68,6 +66,7 @@ class AlienInvasion:
 		"""Respond to keypresses mouse events."""
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
+				pygame.quit()
 				sys.exit()
 			elif event.type == pygame.KEYDOWN:
 				self._check_keydown_events(event)
@@ -128,13 +127,13 @@ class AlienInvasion:
 
 	def _update_bullets(self):
 		"""Update position of bullets and get rid of old bullets."""
-		# Update bullet positions.
+		# Update bull positions.
 		self.bullets.update()
 
 		# Get rid of bullets that have disappeared.
-		for bullet in self.bullets.copy():
-			if bullet.rect.bottom <= 0:
-				self.bullets.remove(bullet)
+		for bull in self.bullets.copy():
+			if bull.rect.bottom <= 0:
+				self.bullets.remove(bull)
 
 		self._check_bullet_alien_collisions()
 
@@ -249,10 +248,12 @@ class AlienInvasion:
 
 	def _update_screen(self):
 		"""Update images on the screen, and flip to the new screen."""
+
 		self.screen.fill(self.settings.bg_color)
+		self.background.blitme()
 		self.ship.blitme()
-		for bullet in self.bullets.sprites():
-			bullet.draw_bullet()
+		for bull in self.bullets.sprites():
+			bull.draw_bullet()
 		self.aliens.draw(self.screen)
 
 		# Draw the score information.

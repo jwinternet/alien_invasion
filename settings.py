@@ -1,10 +1,6 @@
 #!/usr/bin/env python3
 """Alien Invasion - Settings Module"""
 
-__author__ = "Jared Winter"
-__started__ = "2/23/2021"
-__revision__ = "v1.0.0"
-
 
 class Settings:
 	"""A class to store all settings for Alien Invasion."""
