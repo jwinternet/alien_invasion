@@ -3,7 +3,7 @@
 
 __author__ = "Jared Winter"
 __started__ = "2/23/2021"
-__revision__ = "v0.2.0"
+__revision__ = "v1.0.0"
 
 import pygame
 from pygame.sprite import Sprite
@@ -14,7 +14,6 @@ class Bullet(Sprite):
 
 	def __init__(self, ai_game):
 		"""Create a bullet object at the ship's current position."""
-
 		super().__init__()
 		self.screen = ai_game.screen
 		self.settings = ai_game.settings
