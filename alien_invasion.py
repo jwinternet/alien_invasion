@@ -10,6 +10,7 @@ import time
 
 import pygame
 
+import background
 import bullet
 import button
 import game_stats
@@ -44,6 +45,7 @@ class AlienInvasion:
 		self.sb = scoreboard.Scoreboard(self)
 
 		self.ship = ship.Ship(self)
+		self.background = background.Background(self)
 		self.bullets = pygame.sprite.Group()
 		self.aliens = pygame.sprite.Group()
 
@@ -249,7 +251,9 @@ class AlienInvasion:
 
 	def _update_screen(self):
 		"""Update images on the screen, and flip to the new screen."""
+
 		self.screen.fill(self.settings.bg_color)
+		self.background.blitme()
 		self.ship.blitme()
 		for bullet in self.bullets.sprites():
 			bullet.draw_bullet()
